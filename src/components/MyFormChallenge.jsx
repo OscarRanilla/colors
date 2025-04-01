@@ -1,10 +1,45 @@
+// Formulario que maneja el input y el estado
+// Aquí usaremos useRef para manejar el input.
 
+import { useState, useRef } from "react";
+import BoxColor from "./BoxColor";
 
-function MyForm() {
+const colors = [
+  "red",
+  "green",
+  "pink",
+  "yellow",
+  "purple",
+  "white",
+  "blue",
+  "aqua",
+  "olive",
+];
+
+function MyFormChallenge() {
+  const [value, setValue] = useState("");
+  const inputRef = useRef(null);
+
+  const handleChange = () => {
+    setValue(inputRef.current.value);
+  };
 
   return (
-    <></>
+    <div className="container">
+      <input
+        type="text"
+        placeholder="Choose a color"
+        ref={inputRef}
+        onChange={handleChange}
+        className="input"
+      />
+      <div className="box-container">
+        {colors.map((color) => (
+          <BoxColor key={color} color={color} value={value} />
+        ))}
+      </div>
+    </div>
   );
 }
 
-export default MyForm;
+export default MyFormChallenge;

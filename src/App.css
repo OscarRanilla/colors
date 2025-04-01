@@ -28,7 +28,9 @@
   height: 200px;
   border-width: 1px;
   border-style: solid;
-  color: white;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
 /* Estilos para el input */
@@ -42,9 +44,17 @@ input {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, box-shadow 0.3s;
   margin-bottom: 20px;
+  text-align: center;
 }
 
-
+/* Estilo para las cajas organizadas 3x3 */
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas de tamaño flexible */
+  gap: 20px; /* Espaciado entre las cajas */
+  width: 100%;
+  justify-content: center;
+}
 
 
 
