@@ -25,20 +25,20 @@ function MyFormChallenge() {
   };
 
   return (
+    <>
+    <input
+    type="text"
+    placeholder="Choose a color"
+    ref={inputRef}
+    onChange={handleChange}
+    className="input"
+  />
     <div className="container">
-      <input
-        type="text"
-        placeholder="Choose a color"
-        ref={inputRef}
-        onChange={handleChange}
-        className="input"
-      />
-      <div className="box-container">
         {colors.map((color) => (
           <BoxColor key={color} color={color} value={value} />
         ))}
-      </div>
     </div>
+    </>
   );
 }
 
